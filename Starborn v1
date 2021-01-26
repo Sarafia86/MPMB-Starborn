@@ -1,0 +1,84 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Race
+	Effect:		This script adds a player race, called "Starborn"
+	Code by:	Sarafia
+	Date:		2018-11-06 (sheet v13.0.0beta6)
+*/
+
+var iFileName = "Starborn";
+RequiredSheetVersion(12.999);
+
+SourceList["B182:S"] = {
+	name : "Starborn",
+	abbreviation : "B182:S",
+	url : "https://homebrewery.naturalcrit.com/share/GO3LESRgb",
+	date : "2021/01/26"
+};
+
+RaceList["starborn"] = {
+	regExpSearch : /starborn/i,
+	name : "Starborn",
+	source : ["B182:S", 0],
+	plural : "Starborns",
+	size : 3,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	languageProfs : ["Common", "Celestial"],
+	vision : [["Darkvision", 60]],
+	savetxt : {
+		text : ["resistance to Cold Climates"],
+		resistance : ["Cold"]
+	},
+	Profs : ["Nature"],
+	age : " mature at the rate of humans, but live indefinately",
+	height : " stand between 4 and 5.9 feet tall",
+	weight : " weigh extremely light",
+	heightMetric : " stand between 1,2 and 1,75 metres tall",
+	weightMetric : " weigh extremely light",
+	improvements : "Starborn: +1 Wisdom, +2 Charisma;",
+	scores : [0, 0, 0, 1, 0, 2],
+	trait : "Starborn (+1 Wisdom, +2 Charisma)\n: I know the Druidcraft cantrip.\n   At 3rd level, I can cast Armor of Agathys once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Pass Without Trace once per long rest.\n   Charisma is my spellcasting ability for these spells",
+	spellcastingAbility : 6,
+	spellcastingBonus : {
+		spells : ["druidcraft"],
+		selection : ["druidcraft"],
+		firstCol : 'atwill'
+	},
+	features : {
+		"armor of agathys" : {
+			name : "Armor of Agathys (2nd level)",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : " ",
+			spellcastingBonus : {
+				name : "Armor of Agathys (level 3)",
+				spells : ["armor of agathys"],
+				selection : ["armor of agathys"],
+				firstCol : "oncelr"
+			}
+		},
+		"pass without trace" : {
+			name :  "Pass without trace",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : " pass without trace",
+			spellcastingBonus : {
+				name : "Pass without trace (level 5)",
+				spells : ["pass without trace"],
+				selection : ["pass without trace"],
+				firstCol : "oncelr"
+			}
+		}
+	}
+};
