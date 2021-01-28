@@ -34,9 +34,10 @@ RaceList["starborn"] = {
 	},
 	languageProfs : ["Common", "Celestial"],
 	vision : [["Darkvision", 60]],
+	dmgres : ["Cold"]
 	savetxt : {
 		text : ["resistance to Cold Climates"],
-		resistance : ["Cold"]
+	
 	},
 	Profs : ["Nature"],
 	age : " mature at the rate of humans, but live indefinately",
@@ -45,7 +46,7 @@ RaceList["starborn"] = {
 	heightMetric : " stand between 1,2 and 1,75 metres tall",
 	weightMetric : " weigh extremely light",
 	improvements : "Starborn: +1 Wisdom, +2 Charisma;",
-	scores : [0, 0, 0, 1, 0, 2],
+	scores : [0, 0, 0, 0, 1, 2],
 	trait : "Starborn (+1 Wisdom, +2 Charisma)\n: I know the Druidcraft cantrip.\n   At 3rd level, I can cast Armor of Agathys once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Pass Without Trace once per long rest.\n   Charisma is my spellcasting ability for these spells",
 	spellcastingAbility : 6,
 	spellcastingBonus : {
@@ -68,13 +69,13 @@ RaceList["starborn"] = {
 			}
 		},
 		"pass without trace" : {
-			name :  "Pass without trace",
+			name :  "Pass Without Trace",
 			minlevel : 5,
 			usages : 1,
 			recovery : "long rest",
 			tooltip : " pass without trace",
 			spellcastingBonus : {
-				name : "Pass without trace (level 5)",
+				name : "Pass Without Trace (level 5)",
 				spells : ["pass without trace"],
 				selection : ["pass without trace"],
 				firstCol : "oncelr"
